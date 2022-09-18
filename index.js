@@ -11,7 +11,7 @@ let minutes = timeStamp.getMinutes()
 let seconds = timeStamp.getSeconds()
 let dateTime = `${date} - ${hours};${minutes};${seconds}`
 
-fs.appendFile(`./TimeContent/${dateTime}`, `${timeStamp}`, function (err) {
+fs.appendFile(`./TimeStamp/${dateTime}`, `${timeStamp}`, function (err) {
   if (err) {
     console.log(err)
   } else {
@@ -19,7 +19,7 @@ fs.appendFile(`./TimeContent/${dateTime}`, `${timeStamp}`, function (err) {
   }
 })
 
-fs.readdir('./TimeContent', (err, files) => {
+fs.readdir('./TimeStamp', (err, files) => {
   if (err) console.log(err)
   else {
     app.get('/', function (req, res) {
